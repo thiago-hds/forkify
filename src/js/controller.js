@@ -46,14 +46,11 @@ const createRecipeIngredientHtml = function (ingredient) {
 };
 
 const renderRecipe = async function (recipe) {
-	let recipeImgUrl = new URL(recipe.image);
-	recipeImgUrl.protocol = 'https';
-	recipeImgUrl = recipeImgUrl.toString();
-	recipeImgUrl = 'https://source.unsplash.com/random';
-
 	const html = `
 		<figure class="recipe__fig">
-			<img src="${recipeImgUrl}" alt="${recipe.title}" class="recipe__img" />
+			<img src="${recipe.image}" alt="${
+		recipe.title
+	}" class="recipe__img" crossorigin="anonymous" />
 			<h1 class="recipe__title">
 			<span>${recipe.title}</span>
 			</h1>
